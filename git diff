@@ -1,0 +1,85 @@
+[1mdiff --cc src/views/movie/detail/moveitem.vue[m
+[1mindex 6d0bc6d,eb2eefb..0000000[m
+[1m--- a/src/views/movie/detail/moveitem.vue[m
+[1m+++ b/src/views/movie/detail/moveitem.vue[m
+[36m@@@ -101,18 -96,8 +97,18 @@@[m
+        <router-link tag="p" :to="{name:'office',params:{}}" class="performer">票房详情</router-link>[m
+      </div>[m
+      <div class="footer">[m
+[31m-       <p>特惠选座</p>[m
+[32m+       <router-link tag='p' :to="{name:'Seat'}">特惠选座</router-link>[m
+      </div>[m
+[32m +    <div class="mymodal clearfix" v-show="showModal==true">[m
+[32m +      <img @click="closemodal" class="close" src="@/assets/imgs/icons/chahao.png" alt>[m
+[32m +      <div class="modal">[m
+[32m +        <iframe[m
+[32m +          class="modal-movie"[m
+[32m +          src="https://www.bilibili.com/video/av49023234/"[m
+[32m +          frameborder="0"[m
+[32m +        ></iframe>[m
+[32m +      </div>[m
+[32m +    </div>[m
+    </div>[m
+  </template>[m
+  [m
+[36m@@@ -127,25 -112,26 +123,29 @@@[m [mexport default [m
+    mixins: [MiXin],[m
+    data() {[m
+      return {[m
+[32m+       [m
+[32m+       starStar:0,[m
+[32m+       moviedetail:[],[m
+        show: 1,[m
+[32m +      showModal: false,[m
+[32m +      moviedetail: [],[m
+        bannerswiperOption: {[m
+[31m-         slidesPerView: 3.2,[m
+[32m+         slidesPerView: 2.5,[m
+          spaceBetween: 15[m
+        },[m
+[31m -      bannerswiper2Option:{[m
+[31m -        slidesPerView: 1.4,[m
+[31m -      }[m
+[32m +      bannerswiper2Option: {[m
+[32m +        slidesPerView: 1.2[m
+[32m +      },[m
+[32m +[m
+      };[m
+    },[m
+    components: {[m
+      swiper,[m
+      swiperSlide[m
+    },[m
+[31m -  created () {[m
+[32m +  created() {[m
+      this.getMovie();[m
+[32m+      [m
+    },[m
+    methods: {[m
+      listshow() {[m
+[36m@@@ -287,18 -287,18 +290,21 @@@[m
+        font-size: 18px;[m
+        text-align: left;[m
+      }[m
+[31m -    .swiper-banner{[m
+[31m -      margin-top:15px;[m
+[32m +    .swiper-banner {[m
+[32m +      margin-top: 15px;[m
+        text-align: left;[m
+        font-size: 12px;[m
+[31m -      color: #898B8F;[m
+[32m +      color: #898b8f;[m
+        line-height: 18px;[m
+[32m +      .movie{[m
+[32m +        width: 250px;[m
+[32m +        height: 150px;[m
+[32m+       .castsImg{[m
+[32m+         width: 100px;[m
+[32m+         height: 140px;[m
+        }[m
+      }[m
+[31m -    .performer{[m
+[32m +    .performer {[m
+        margin-top: 15px;[m
+        font-size: 14px;[m
+        color: #fbc34a;[m
